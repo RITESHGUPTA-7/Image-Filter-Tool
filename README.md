@@ -10,7 +10,7 @@
         7) Forest Fire Detector\
         8) Flip Effect\
         9) Quote Effect 1 for Square Images\
-        10) Quote Effect 2
+       10) Quote Effect 2
         
  # Library dependencies required:
    PILLOW PIL\
