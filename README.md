@@ -1,5 +1,5 @@
 # Image Filter Tool
- Tool to apply different varity of filter on Images
+ Tool to apply different variety of filters on Images
  # Library dependencies required:
    PILLOW PIL,
    simpleimage
