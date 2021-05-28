@@ -44,28 +44,13 @@ def grey_filter(image):
         pixels.blue=brightness
     return image
 
-# -----------------CHANGES THE BACKGROUND OF AN IMAGE WITH OTHER------------------------
-def change_background(main_img,background_img):
-# use the Constant Intensity Threshold vlaue as 1.6
-    m_image=SimpleImage(main_img)
-    b_image=SimpleImage(background_img)
-    for pixels in m_image:
-        avg= (pixels.red + pixels.green + pixels.blue)//3
-        # check if the pixel is suffienciently green if yes then replace the pixels
-        if pixels.blue >= avg * INTENSITY_THRESHOLD:
-            x=pixels.x
-            y=pixels.y
-            m_image.set_pixel(x,y,b_image.get_pixel(x,y))
-    return m_image
-
 # ------------------------FINDS THE FLAMES OF FOREST-----------------------------
-def find_flames(filename):
+def find_flames(image):
     """
     This function should highlight the "sufficiently red" pixels
     in the image and grayscale all other pixels in the image
     in order to highlight areas of wildfires.
     """
-    image = SimpleImage(filename)
     for pixels in image:
         avg= (pixels.red + pixels.green + pixels.blue)//3
         if pixels.red >= avg * INTENSITY_THRESHOLD:
@@ -173,8 +158,8 @@ def main():
         switcher = {
             1:Indra,
             2:red_filter,
-            3:green_filter,
-            4:blue_filter,
+            3:blue_filter,
+            4:green_filter,
             5:dark_filter,
             6:grey_filter,
             7:find_flames,
